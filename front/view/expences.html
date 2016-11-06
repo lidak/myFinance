@@ -1,0 +1,26 @@
+<div>
+    <table>
+        <tbody ng-repeat="(day, dayExpences) in expencesByDays">
+            <tr>
+                <td colspan="4">{{day}}</td>
+            </tr>
+            <tr ng-repeat="(categoryName, categoryExpences) in dayExpences">
+                <td>
+                    <table>
+                        <tr ng-repeat="product in categoryExpences">
+                            <td>{{product.product}}</td>
+                            <td>{{product.amount}}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <form action="">
+        <input type="text" placeholder="Product" ng-model="newExpence.product">
+        <input type="text" placeholder="Category" ng-model="newExpence.category">
+        <input type="date" ng-model="newExpence.date">
+        <input type="number" ng-model="newExpence.amount">
+        <button type="button" ng-click="addExpence()">+</button>
+    </form>
+</div>
