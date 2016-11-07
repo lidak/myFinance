@@ -1,4 +1,6 @@
 CACHE MANIFEST
 /bower_components/angular/angular.min.js
+/bower_components/angular-route/angular-route.min.js
+
 /js/main.js
 /js/controller/expencesController.js
