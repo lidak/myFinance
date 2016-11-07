@@ -15,7 +15,7 @@ describe('expencesController', function() {
 
         $controller('expencesController', { $scope: scope });
         scope.expencesByDays = {
-            '2016-11-06': {
+            '06-11-2016': {
                 food: [{
                     amount: oldAmount,
                     product: 'bread'
@@ -26,12 +26,12 @@ describe('expencesController', function() {
         var newExpence = {
             category: 'food',
             product: 'bread',
-            date: '2016-11-06',
+            date: '06-11-2016',
             amount: newAmount
         };
 
         var expenceAfterAddition = {
-            '2016-11-06': {
+            '06-11-2016': {
                 food: [{
                     amount: oldAmount + newAmount,
                     product: 'bread'

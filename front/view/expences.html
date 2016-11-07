@@ -20,7 +20,7 @@
         <input type="text" placeholder="Product" ng-model="newExpence.product">
         <input type="text" placeholder="Category" ng-model="newExpence.category">
         <input type="date" ng-model="newExpence.date">
-        <input type="number" ng-model="newExpence.amount">
+        <input type="number" ng-model="newExpence.amount" min="0.01">
         <button type="button" ng-click="addExpence()">+</button>
     </form>
 </div>

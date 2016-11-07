@@ -16,7 +16,12 @@ module.exports = function(config) {
         // list of files / patterns to load in the browser
         files: [
             'front/bower_components/angular/angular.min.js',
+            'front/bower_components/angular-route/angular-route.js',
             'front/bower_components/angular-mocks/angular-mocks.js',
+            'front/bower_components/moment/moment.js',
+            'front/bower_components/angular-moment/angular-moment.js',
+
+
             'front/js/*.js',
             'front/js/**/*.js'
         ],

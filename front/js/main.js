@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('financeApp', ['ngRoute']);
+var app = angular.module('financeApp', ['ngRoute', 'angularMoment']);
 app.config(function ($routeProvider) {
 	$routeProvider
 		.when('/', {
