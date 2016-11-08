@@ -2,11 +2,12 @@
     <table>
         <tbody ng-repeat="(day, dayExpences) in expencesByDays">
             <tr>
-                <td colspan="4">{{day}}</td>
+                <td>{{day}}</td>
             </tr>
             <tr ng-repeat="(categoryName, categoryExpences) in dayExpences">
                 <td>
                     <table>
+                        <tr>{{categoryName }}</tr>
                         <tr ng-repeat="product in categoryExpences">
                             <td>{{product.product}}</td>
                             <td>{{product.amount}}</td>

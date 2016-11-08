@@ -22,6 +22,6 @@ gulp.task('tdd', function (done) {
     }).start();
 });
 
-gulp.task('startServer', function(callback) {
+gulp.task('serve', function(callback) {
     appServer.start(callback);
 });

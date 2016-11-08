@@ -3,14 +3,14 @@
 angular.module('financeApp')
 	.controller('expencesController', ['$scope', '$filter', function ($scope, $filter) {
 		$scope.newExpence = {
-			date: ''
+			date: new Date()
 		};
 
 		$scope.expencesByDays = {
             '06-11-2016': {
-                food: [{
+                Food: [{
                     amount: 2.22,
-                    product: 'bread'
+                    product: 'Bread'
                 }]
             }
         };
@@ -20,6 +20,8 @@ angular.module('financeApp')
 			var targetCategory;
 			var targetProduct;
 			var formattedExpenceDate = $filter('expenceDateFilter')($scope.newExpence.date);
+			var formattedProduct = $filter('firstLetterCapitalFilter')($scope.newExpence.product);
+			var formattedCategory = $filter('firstLetterCapitalFilter')($scope.newExpence.category);
 
 			if (!$scope.expencesByDays[formattedExpenceDate]) {
 				$scope.expencesByDays[formattedExpenceDate] = {};
@@ -27,20 +29,20 @@ angular.module('financeApp')
 
 			targetDate = $scope.expencesByDays[formattedExpenceDate];
 
-			if (!targetDate[$scope.newExpence.category]) {
-				targetDate[$scope.newExpence.category] = [];
+			if (!targetDate[formattedCategory]) {
+				targetDate[formattedCategory] = [];
 			}
 
-			targetCategory = targetDate[$scope.newExpence.category];
+			targetCategory = targetDate[formattedCategory];
 
 			targetProduct = targetCategory.filter(function (product) {
-				return product.product === $scope.newExpence.product;
+				return product.product === formattedProduct;
 			})[0];
 			
 			if (!targetProduct) {
 				targetProduct = {
 					amount: 0,
-					product: $scope.newExpence.product
+					product: formattedProduct
 				};
 
 				targetCategory.push(targetProduct); 

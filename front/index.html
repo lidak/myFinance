@@ -3,14 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="style/main.css">
+
+	<!-- libs -->
 	<script src="bower_components/angular/angular.min.js"></script>
 	<script src="bower_components/angular-route/angular-route.min.js"></script>
 	<script src="bower_components/moment/moment.js"></script>
 	<script src="bower_components/angular-moment/angular-moment.min.js"></script>
 
 	<script src="js/main.js"></script>
+	<!-- controller -->
 	<script src="js/controller/expencesController.js"></script>
+	<!-- filters -->
 	<script src="js/filter/expenceDateFilter.js"></script>
+	<script src="js/filter/firstLetterCapitalFilter.js"></script>
 </head>
 <body ng-app="financeApp">
 	<div ng-view></div>

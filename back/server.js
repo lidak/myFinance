@@ -9,8 +9,8 @@ var express = require('express'),
 
 app.use('/bower_components', express.static(path.resolve('./front/bower_components')));
 app.use('/js', express.static(path.resolve('./front/js')));
-// app.use('/css', express.static(`${__dirname}/app/css`));
 app.use('/view', express.static(path.resolve('./front/view')));
+app.use('/style', express.static(path.resolve('./front/style/')));
 app.use('/my-finance.appcache', express.static(path.resolve('./front/my-finance.appcache')));
 app.get('*', function(req, res) {
     res.sendFile(path.resolve('./front/index.html'));
