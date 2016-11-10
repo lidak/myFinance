@@ -1,5 +1,6 @@
 'use strict';
 let mongojs = require('mongojs');
+const CONST = require('./constants');
 var expencesCollection;
 let db;
 
@@ -22,13 +23,13 @@ let setExpenceForUser = function (userId, category, product, date, price) {
             console.log('err', err, 'doc', doc);
             if (err) {
                 reject({
-                    result: 'ERROR',
-                    response: err
+                    result: CONST.response.status.fail,
+                    data: err
                 });
             } else {
                 resolve({
-                    result: 'SUCCESS',
-                    response: doc
+                    result: CONST.response.status.ok,
+                    data: doc
                 });
             }
         });
