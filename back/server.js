@@ -5,7 +5,9 @@ var express = require('express'),
     server,
     port = process.env.PORT || 5000,
     serverStarted = false,
-    path = require('path');
+    path = require('path'),
+
+    db = require('./db');
 
 app.use('/bower_components', express.static(path.resolve('./front/bower_components')));
 app.use('/js', express.static(path.resolve('./front/js')));
@@ -15,7 +17,6 @@ app.use('/my-finance.appcache', express.static(path.resolve('./front/my-finance.
 app.get('*', function(req, res) {
     res.sendFile(path.resolve('./front/index.html'));
 });
-
 
 function start(callback) {
     if (serverStarted) {

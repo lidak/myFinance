@@ -16,12 +16,12 @@ angular.module('financeApp')
         };
 
 		$scope.addExpence = function () {
-			var targetDate;
-			var targetCategory;
-			var targetProduct;
-			var formattedExpenceDate = $filter('expenceDateFilter')($scope.newExpence.date);
-			var formattedProduct = $filter('firstLetterCapitalFilter')($scope.newExpence.product);
-			var formattedCategory = $filter('firstLetterCapitalFilter')($scope.newExpence.category);
+			var targetDate,
+				targetCategory,
+				targetProduct,
+				formattedExpenceDate = $filter('expenceDateFilter')($scope.newExpence.date),
+				formattedProduct = $filter('firstLetterCapitalFilter')($scope.newExpence.product),
+				formattedCategory = $filter('firstLetterCapitalFilter')($scope.newExpence.category);
 
 			if (!$scope.expencesByDays[formattedExpenceDate]) {
 				$scope.expencesByDays[formattedExpenceDate] = {};
